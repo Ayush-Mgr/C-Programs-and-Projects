@@ -32,10 +32,17 @@ int main() {
       }
       
   }
-    printf("shorted arrey are : ");
+    printf("The shorted arreys are : ");
     for(int i = size - 1; i >= 0 ; i--) {
         printf("%d ",arr[i]);
     }
 
     return 0;
 }
+
+
+/*
+output:
+size = 6,
+shorted arrey are : 1 2 3 4 5 8 
+*/
