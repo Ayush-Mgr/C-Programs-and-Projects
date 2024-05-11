@@ -22,19 +22,29 @@ int main()
 
     if (strcmp(inp,std1.name) == 0)
     {
-        printf("THE RESULT of %s IS %d ",std1.name, std2.marks);
+        printf("\nTHE RESULT of %s IS %d ",std1.name, std2.marks);
     }
 
     if (strcmp(inp,std2.name) == 0)
     {
-        printf("THE RESULT of %s IS %d ",std2.name, std2.marks);
+        printf("\nTHE RESULT of %s IS %d ",std2.name, std2.marks);
     }
     if (strcmp(inp,std3.name) == 0)
     {
-        printf("THE RESULT of %s IS %d ",std3.name, std3.marks);
+        printf("\nTHE RESULT of %s IS %d ",std3.name, std3.marks);
     }
     
 
 
     return 0;
 }
+
+/*
+output :
+>name of the student :                                                                                                           
+hydr
+
+>THE RESULT of hydr IS 90
+
+
+*/
