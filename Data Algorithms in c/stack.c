@@ -1,9 +1,27 @@
-// Online C compiler to run C program online
 #include <stdio.h>
-void push (){
-       
+void push (int stack[] ,int *top , int size ){
+    int in ;
+    if(*top == size-1){
+        printf("the stack is full");
+    }
+    else{
+        printf("enter the input : \n => ");
+        scanf("%d",&in);
+        (*top)++;
+        stack[*top] = in ;
+        
+        
+    }
 }
-void pop (){
+void pop (int stack[] ,int *top ){
+     if( *top == -1){
+        printf("Stack is empty\n ");
+     }else{ 
+          printf(" An element of Stack %d is removed\n ", stack[*top]);
+          (*top)--;
+          
+     }
+       
        
 }
 void peek (){
@@ -17,17 +35,20 @@ void isempty (){
 }
 int main() {
    int stack[100];
-   char options,size,x;
+   char options,size,x, top= -1 ;
     printf("Enter size of an arrey:\n=> ");
     scanf("%d",&size);
+    
    while (options != x ){
-       printf("choose \np => pop\n e => peek\n x=> exit ");
+       printf("choose \np =>push \nd => pop\n e => peek\n x=> exit ");
        scanf("%c",options);
        
        switch (options)
        
        case 'p':
-        pop();
+        push(stack,&top,size);
+       case 'd':
+        pop(stack,&top);
        case 'e':
         peek();
        case 'x':
@@ -40,3 +61,37 @@ int main() {
    
     return 0;
 }
+
+/* // Online C compiler to run C program online
+#include <stdio.h>
+void push (int stack[] ,int *top , int size ){
+    int in ;
+    if(*top == size-1){
+        printf("the stack is full");
+    }
+    else{
+        printf("enter the input : \n => ");
+        scanf("%d",&in);
+        (*top)++;
+        stack[*top] = in ;
+        
+        
+    }
+}
+    void pop (int stack[] ,int *top ){
+     if( *top == -1){
+        printf("Stack is empty\n ");
+     }else{ 
+          printf(" An element of Stack %d is removed\n ", stack[*top]);
+          (*top)--;
+          
+     }
+}
+int main() {
+    int stack[100] , top = -1  , size= 10;
+    push(stack,&top,size);
+    printf("top is %d ",stack[top] );
+    pop(stack,&top);
+    printf("top is %d ",stack[top] );
+    return 0;
+}*/
