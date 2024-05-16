@@ -17,14 +17,18 @@ void pop (int stack[] ,int *top ){
      if( *top == -1){
         printf("Stack is empty\n ");
      }else{ 
+          if (*top == -1){
+              printf("Stack is empty\n "); 
+          } else{
           printf(" An element of Stack %d is removed\n ", stack[*top]);
           (*top)--;
+              
+          }
           
      }
-       
-       
 }
-void peek (){
+void peek (stack[],int *top){
+     printf("top is %d ",stack[*top] );
        
 }
 void isfull (){
@@ -50,7 +54,7 @@ int main() {
        case 'd':
         pop(stack,&top);
        case 'e':
-        peek();
+        peek(stack,&top);
        case 'x':
         options = x;
         
