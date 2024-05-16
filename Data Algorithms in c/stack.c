@@ -27,15 +27,17 @@ void pop (int stack[] ,int *top ){
           
      }
 }
-void peek (stack[],int *top){
+void peek (int stack[],int *top, int size){
+    if(*top == size-1){
+        printf("the stack is full");
+    }
+    elif (*top == -1){
+        printf("Stack is empty\n "); 
+        
+    }
+    else{
      printf("top is %d ",stack[*top] );
-       
-}
-void isfull (){
-       
-}
-void isempty (){
-       
+    }
 }
 int main() {
    int stack[100];
@@ -54,7 +56,7 @@ int main() {
        case 'd':
         pop(stack,&top);
        case 'e':
-        peek(stack,&top);
+        peek(stack,&top,size);
        case 'x':
         options = x;
         
@@ -65,6 +67,7 @@ int main() {
    
     return 0;
 }
+
 
 /* // Online C compiler to run C program online
 #include <stdio.h>
