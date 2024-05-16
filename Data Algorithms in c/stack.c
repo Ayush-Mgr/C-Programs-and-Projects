@@ -102,3 +102,31 @@ int main() {
     printf("top is %d ",stack[top] );
     return 0;
 }*/
+
+
+
+/*#include <stdio.h>
+void push (int stack[] ,int *top , int size ){
+    int in ;
+    if(*top == size-1){
+        printf("the stack is full");
+    }
+    else{
+        printf("enter the input : \n => ");
+        scanf("%d",&in);
+        (*top)++;
+        stack[*top] = in ;
+        
+        
+    }
+}
+    void peek (int stack[],int *top){
+     printf("top is %d ",stack[*top] );
+}
+int main() {
+    int stack[100] , top = -1  , size= 10;
+    push(stack,&top,size);
+    peek(stack,&top);
+    
+    return 0;
+}*/
