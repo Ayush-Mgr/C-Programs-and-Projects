@@ -1,36 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 struct node
 {
     int data;
     struct node* next;
-};
+}*head,*second,*temp;
 
-enum options {
-    quit,
-    add ,
-    delete,
-    display
+int main(){ 
+    char opt;
+    head = 0;
+    do
+    {
+        
+        second = (struct node *)malloc(sizeof(struct node));
+        printf("\ninput the data:\n ");
+        scanf("%d",&second->data);
+        second->next = NULL;
+        if (head == 0)
+        {
+            head = second ;
+            temp = second ;
+        }
+        else{
 
+            temp->next = second;
 
-}option;
-int main()
-{   
-    printf("Enter command:\n");
-    printf("1. Quit\n");
-    printf("2. Add\n");
-    printf("3. Delete\n");
-    printf("4. Display\n");
-    scanf("%d",&option);
-    
-    
-    while (option != 0){
-       struct node  one ;
-       struct node  second ;    
-
+            temp = second;
+        }
+        printf("contine Y/N:\n ");
+        scanf(" %c",&opt);
+    } while (opt != 'N');
+    temp= head;
+    int i =0 ;
+    while (temp != NULL)
+    {      i++;
+        struct node* to_free = temp;
+        printf("\n%d data is  %d",i,temp->data);
+        temp = temp->next;
+        free(to_free);
     }
-
+    
     return 0;
 }
 
@@ -40,23 +51,36 @@ int main()
 
 
 
+/*output: 
 
+input the data:
+ 12
+contine Y/N:
+ Y
 
+input the data:
+ 33
+contine Y/N:
+ Y
 
+input the data:
+ 32
+contine Y/N:
+ Y
 
-/* SIMPLE:
-int main()
-{
-    struct node  one ;
-    struct node  second ;
-    one.data = 123;
-    one.next = &second;
-    printf("\ndata => %d  ",one.data);
-    printf("\nnext ptr  => %p  ",*(one.next));
-    return 0;
-}
+input the data:
+ 11
+contine Y/N:
+ N
 
-output :
-data => 123
-next ptr  => 00401970
+1 data is  12
+2 data is  33
+3 data is  32
+4 data is  11
+
 */
+
+
+
+
+
