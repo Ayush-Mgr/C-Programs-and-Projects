@@ -1,0 +1,104 @@
+desc student
+
+-- THE NESTED QURIES 
+
+-- FINDING MAX FROM TABLE
+SELECT name , tot_cred
+FROM student
+where tot_cred =(SELECT MAX(tot_cred)
+FROM student)
+;
+
+--FINDING SEOND HIGEST FROM TABLE 
+
+SELECT name , MAX( tot_cred)
+FROM student
+where tot_cred != (SELECT MAX(tot_cred)
+FROM student)
+;
+
+------------------------------------------------------------------
+--GROUP BY
+
+SELECT dept_name , COUNT(dept_name)
+FROM student
+GROUP BY dept_name
+;
+
+-- less dep where students <  90 
+SELECT name ,dept_name , COUNT(dept_name)
+FROM student
+GROUP BY dept_name
+HAVING COUNT(dept_name) < 90
+;
+
+--higest tot_cred dep wise + name
+
+
+SELECT name, dept_name , MAX(tot_cred)
+FROM student
+GROUP BY dept_name
+;
+
+--
+ALTER department
+add CONSTRAINT fk_dpname
+Foreign Key (dept_name) REFERENCES student(dept_name);
+ 
+SELECT name , building
+FROM student,department
+WHERE building = 'Taylor';
+DESC student
+
+
+
+--- joints
+
+SELECT
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Active: 1717923047642@@127.0.0.1@3306@practice1
+-- creating Table 
+CREATE TABLE test_able(
+    texts VARCHAR(2),
+    nums INT
+);
+
+INSERT test_able(texts,nums) VALUES ('ab',12);
+
+select *
+FROM test_able;
+
+INSERT test_able(texts,nums) VALUES ('cd',34);
+INSERT test_able(texts,nums) VALUES ('ef',56);
+INSERT test_able(texts,nums) VALUES ('gh',78);
+INSERT test_able(texts,nums) VALUES ('ij',910);
+
+ALTER table test_able 
+ADD PRIMARY KEY(Sno); 
+
+
+
+
+SET @serial_number := 0;
+
+SET @serial_number := 0;
+
+UPDATE test_able
+SET Sno = (@serial_number := @serial_number + 1);
+
+DESC test_able;
+
+ALTER Table test_able MODIFY nums VARCHAR(2);
+
