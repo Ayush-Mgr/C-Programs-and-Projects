@@ -7,7 +7,7 @@ Welcome to the C Programs and Projects repository! This repository contains vari
 <h1>Repository Structure </h1>
 
 <pre>
-|-- <a href="https://github.com/Ayush-Mgr/C-Programs-and-Projects/tree/main/programs">PROGRAMS</a> 
-   |-- 1.HelloWorld
-   |-- 2.Addition and Subtraction
+|-- <a href="https://github.com/Ayush-Mgr/C-Programs-and-Projects/tree/main/programs">QURIES</a> 
+   |-- 1.basic Quries
+   |-- 
 </pre>
