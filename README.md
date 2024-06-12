@@ -2,7 +2,7 @@
 
 Welcome to the C Programs and Projects repository! This repository contains various small C programs and projects to help you learn and practice C programming.
 
-## Project Structure
+
 
 <h1>Repository Structure </h1>
 
