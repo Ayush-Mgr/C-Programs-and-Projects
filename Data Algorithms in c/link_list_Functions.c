@@ -7,11 +7,24 @@ struct node
     struct node* next;
 }*head,*second,*temp;
 
+//DELETE FUNCTIONS
+void DEL(struct node** head){
+    struct node* temp = *head;
+    *head = (*head)->next;
+    free(temp);
+
+
+}
+
+
+
+//INSERTION FUNCTIONS 
 void InsertHead(struct node* second){
     second->next = head;
     head = second ;  
 
 }
+
 
 void InsertAt(struct node* second,struct node* head,int LinkSize){
     struct node* temp = head;
@@ -44,9 +57,29 @@ void InsertAt(struct node* second,struct node* head,int LinkSize){
 
 }
 
+void INPUT (struct node* second,struct node* head,int LinkSize){
+        char opt;
+        printf("\t at Head (H) / at End  (E) / at Given Location (G) : \n ");
+            scanf(" %c",&opt);
+            if (opt == 'H')
+            {
+                InsertHead(second);
+
+            }
+            else if(opt == 'E'){
+
+            struct node* temp = head;            
+            temp->next = second; // temp has the existing value of previous Second and it gives the previous second.next the pointer value of next second                
+            temp = second; //now temp is set to recently created second with second.next null 
+            }else if (opt == 'G')
+         {
+            InsertAt(second,head,LinkSize);
+         }
+}
+
 
 int main(){ 
-    char opt;
+    char opt,choise;
     head = 0;
     int LinkSize=0;
     do
@@ -62,22 +95,16 @@ int main(){
             temp = second ;
         }
         else{
-            printf("\t at Head (H) / at End  (c) / at Given Location (G) : \n ");
-            scanf(" %c",&opt);
-            if (opt == 'H')
+            printf("\tinsert (I) or delete(D)\n ");
+            scanf(" %c",&choise);
+            if (choise  == 'I'){
+            INPUT(second,head,LinkSize);
+            }else if (choise == 'D')
             {
-                InsertHead(second);
+                DEL(&head);
+                LinkSize--;
             }
-            else if(opt == 'C'){
             
-            temp->next = second; // temp has the existing value of previous Second and it gives the previous second.next the pointer value of next second
-                                 
-            temp = second; //now temp is set to recently created second with second.next null 
-         }else if (opt == 'G')
-         {
-            InsertAt(second,head,LinkSize);
-         }
-         
         }
         printf("\tcontine Y:\n ");
         printf("\texit N:\n ");
@@ -85,7 +112,8 @@ int main(){
         
         
     } while (opt != 'N');
-    temp= head;
+
+    temp = head;
     int i =0 ;
     while (temp != NULL)
     {      i++;
@@ -98,36 +126,42 @@ int main(){
     return 0;
 }
 
-
-
-
-
-
-
-/*output: 
+/*
+OUTPUT:
 
 input the data:
- 22
+ 12
         contine Y:
         exit N:
  Y
 
 input the data:
- 22
-         at Head (H) / at End  (c) / at Given Location (G) :
- G
-        current size 2
-Input Location :
-1
+ 122
+        insert (I) or delete(D)
+ I
+         at Head (H) / at End  (E) / at Given Location (G) : 
+ H
         contine Y:
         exit N:
  Y
 
 input the data:
- 23
-         at Head (H) / at End  (c) / at Given Location (G) :
+ 123
+        insert (I) or delete(D)
+ I
+         at Head (H) / at End  (E) / at Given Location (G) :
+ E
+        contine Y:
+        exit N:
+ Y
+
+input the data:
+ 121
+        insert (I) or delete(D)
+ I
+         at Head (H) / at End  (E) / at Given Location (G) :
  G
-        current size 3
+        current size 4
 Input Location :
 2
         contine Y:
@@ -135,28 +169,15 @@ Input Location :
  Y
 
 input the data:
- 44 
-         at Head (H) / at End  (c) / at Given Location (G) :
- C
-        contine Y:
-        exit N:
- Y
-
-input the data:
- 77
-         at Head (H) / at End  (c) / at Given Location (G) :
- H
+ 111
+        insert (I) or delete(D)
+ D
         contine Y:
         exit N:
  N
 
-1 data is  77
-2 data is  22
-3 data is  22
-4 data is  44
+1 data is  123
+2 data is  121
+
+
 */
-
-
-
-
-

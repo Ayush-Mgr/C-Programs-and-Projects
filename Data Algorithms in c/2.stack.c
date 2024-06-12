@@ -37,7 +37,7 @@ void peek (int stack[],int *top, int size){
     }
 }
 int main() {
-   int stack[100],size,x, top= -1;
+   int stack[100],size, top= -1;
    char options ;
     printf("Enter size of an arrey:\n=> ");
     scanf("%d",&size);
