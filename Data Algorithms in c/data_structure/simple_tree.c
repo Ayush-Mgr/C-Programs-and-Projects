@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 
 struct tree{
     int data;
@@ -27,14 +28,39 @@ void insert(struct tree** root, int data) {
     }
 }
 
-int main(){
+bool search(struct tree** root, int data){
+    if(root->data==data){
+        return true;
+            } else if(data<=root->data){
+               return search(root->left,data);
+               
+            }
+    else {
+        return search(root->right,data);
+    }
+    
+    
+}
 
+int main(){
+int se;
 struct tree* root=NULL; 
 
 insert(&root,12);
 insert(&root,23);
 insert(&root,10);
 int i;
+printf("enter number to search :\n");
+scanf("%d",&se);
+if(search(&root,se) == true){
+    printf("the suff is there \n");
+}
+else{
+    printf("the suff is NOT there \n");
+    
+}
+
+
 
 
 /* to print: left most values 
@@ -47,8 +73,6 @@ while (root!=NULL)
 }
 
 */
-
-
 return 0;
 
 }
