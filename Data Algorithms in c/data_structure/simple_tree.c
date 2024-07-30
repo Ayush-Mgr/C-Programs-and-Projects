@@ -34,10 +34,17 @@ struct tree* root=NULL;
 insert(&root,12);
 insert(&root,23);
 insert(&root,10);
-int i;
+insert(&root,6);
+insert(&root,9);
+insert(&root,15);
+insert(&root,13);
+
+
 
 
 /* to print: left most values 
+int i = 1;
+
 while (root!=NULL)
 {
     printf("%d ",root->data);
