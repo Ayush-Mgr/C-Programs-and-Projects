@@ -28,18 +28,16 @@ void insert(struct tree** root, int data) {
     }
 }
 
-bool search(struct tree** root, int data){
-    if(root->data==data){
+bool search(struct tree* root, int data) {
+    if (root == NULL) {
+        return false;
+    } else if (root->data == data) {
         return true;
-            } else if(data<=root->data){
-               return search(root->left,data);
-               
-            }
-    else {
-        return search(root->right,data);
+    } else if (data < root->data) {
+        return search(root->left, data);
+    } else {
+        return search(root->right, data);
     }
-    
-    
 }
 
 int main(){
@@ -55,9 +53,10 @@ insert(&root,15);
 insert(&root,13);
 
 
+
 printf("enter number to search :\n");
 scanf("%d",&se);
-if(search(&root,se) == true){
+if(search(root,se) == true){
     printf("the suff is there \n");
 }
 else{
@@ -83,3 +82,4 @@ while (root!=NULL)
 return 0;
 
 }
+
